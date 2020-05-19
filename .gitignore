@@ -53,7 +53,7 @@ application.properties
 
 ### NetBeans ###
 /nbproject/private/
-/build/default-jenkins-home
+/default-jenkins-home
 /nbbuild/
 /dist/
 /nbdist/
