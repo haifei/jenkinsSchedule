@@ -57,3 +57,6 @@ application.properties
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### jenkinsSchedule ###
+/build/default-jenkins-home
