@@ -53,9 +53,10 @@ application.properties
 
 ### NetBeans ###
 /nbproject/private/
-/default-jenkins-home
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
+### self ###
+/build/default-jenkins-home
