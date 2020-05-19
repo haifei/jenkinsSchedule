@@ -70,15 +70,16 @@ cd flink/bin
 sh jenkins-slave.sh start
 ```
 
-* 浏览器访问  [http://localhost:8080](http://localhost:8080)
-
-    
+* 浏览器访问  [http://localhost:8080](http://localhost:8080), 默认管理员用户:  admin/adminQAZ
+![](https://github.com/haifei/jenkinsSchedule/build/images/login.jpg)
+![](https://github.com/haifei/jenkinsSchedule/build/images/main.jpg)
+       
 # 文档
-
+   
 # 关于
   * Jenkins ：[https://www.jenkins.io/](https://www.jenkins.io/) 
   
 # 问题反馈
-  * 报告issue: 
+  * 报告issue: [https://github.com/haifei/jenkinsSchedule/issues](https://github.com/haifei/jenkinsSchedule/issues)
   
 
