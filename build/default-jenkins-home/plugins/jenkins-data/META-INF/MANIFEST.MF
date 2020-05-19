@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: jenkins-data
+Specification-Title: jenkins  platform  plugin
+Implementation-Title: jenkins-data
+Implementation-Version: 1.0
+Group-Id: org.jenkins-ci.plugins
+Short-Name: jenkins-data
+Long-Name: jenkins Data Plugin
+Url: 
+Plugin-Version: 1.0
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Dependencies: priority-queue-plugin:1.0
+Plugin-Developers: 
+

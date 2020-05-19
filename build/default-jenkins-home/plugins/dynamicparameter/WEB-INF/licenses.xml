@@ -1,0 +1,6 @@
+<l:dependencies xmlns:l='licenses'>
+  <l:dependency name='Jenkins Dynamic Parameter Plug-in' groupId='com.seitenbau.jenkins.plugins' artifactId='dynamicparameter' version='0.2.0' url='https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Dynamic+Parameter+Plug-in'>
+    <l:description>This plugin allows build parameters with dynamically generated default values.</l:description>
+    <l:license name='Apache License' />
+  </l:dependency>
+</l:dependencies>

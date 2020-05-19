@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: priority-queue-plugin
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: priority-queue-plugin
+Implementation-Version: 1.0
+Group-Id: org.jenkins-ci.plugins
+Short-Name: priority-queue-plugin
+Long-Name: Priority Queue Plugin
+Plugin-Version: 1.0
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Developers: Larry Shatzer, Jr.:lshatzer:larrys@gmail.com
+

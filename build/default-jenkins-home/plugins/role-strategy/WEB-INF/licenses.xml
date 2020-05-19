@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='role-strategy' version='2.9.0'><l:dependency name='Role-based Authorization Strategy' groupId='org.jenkins-ci.plugins' artifactId='role-strategy' version='2.9.0' url='https://wiki.jenkins.io/display/JENKINS/Role+Strategy+Plugin'><l:description>The Jenkins Plugins Parent POM Project</l:description></l:dependency></l:dependencies>

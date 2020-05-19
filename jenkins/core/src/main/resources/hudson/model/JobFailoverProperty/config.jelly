@@ -1,0 +1,26 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+    xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project"
+    xmlns:this="this">  
+
+    <f:optionalBlock name="taskFailover" title="任务失败重试" checked="${instance!=null}" help="./help.html">
+        <f:entry title="${%重试次数: }">
+            <select name="jobFailoverTimes" align="left">
+            <f:option value="3" selected="${instance.failoverTimes == '3'}">3</f:option>
+            <f:option value="0" selected="${instance.failoverTimes == '0'}">0</f:option>
+            <f:option value="1" selected="${instance.failoverTimes == '1'}">1</f:option>
+            <f:option value="2" selected="${instance.failoverTimes == '2'}">2</f:option>
+            </select>
+        </f:entry>
+        <f:entry title="${%重试间隔-秒: }">
+            <select name="jobFailoverDelayTime" align="left">
+            <f:option value="10" selected="${instance.failoverDelayTime == '10'}">10</f:option>
+            <f:option value="60" selected="${instance.failoverDelayTime == '60'}">60</f:option>
+            <f:option value="180" selected="${instance.failoverDelayTime == '180'}">180</f:option>
+            <f:option value="600" selected="${instance.failoverDelayTime == '600'}">600</f:option>
+            </select>
+        </f:entry>
+    </f:optionalBlock>
+
+
+</j:jelly>

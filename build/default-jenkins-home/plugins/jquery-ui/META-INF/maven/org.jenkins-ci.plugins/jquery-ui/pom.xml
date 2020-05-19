@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.397</version>
+  </parent>
+
+  <artifactId>jquery-ui</artifactId>
+  <version>1.0.2</version>
+  <packaging>hpi</packaging>
+  <name>Jenkins jQuery UI plugin</name>
+  <url>http://wiki.jenkins-ci.org/display/JENKINS/jQuery+UI+Plugin</url>
+
+  <developers>
+    <developer>
+      <id>kiy0taka</id>
+      <name>Kiyotaka Oku</name>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>jquery</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>m.g.o-public</id>
+      <url>http://maven.glassfish.org/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+  <scm>
+    <connection>scm:git:git@github.com:jenkinsci/jquery-ui-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/jquery-ui-plugin.git</developerConnection>
+  </scm>
+
+</project>

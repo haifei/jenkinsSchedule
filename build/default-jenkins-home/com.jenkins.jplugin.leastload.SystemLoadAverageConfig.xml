@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.jenkins.jplugin.leastload.SystemLoadAverageConfig plugin="load-balance@1.1.0-SNAPSHOT">
+  <averageThreshold>32</averageThreshold>
+</com.jenkins.jplugin.leastload.SystemLoadAverageConfig>

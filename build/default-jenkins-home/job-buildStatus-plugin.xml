@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.ziroom.dp.buildstatus.properties.BuildStatusPropertiesPlugin plugin="job-buildStatus-plugin@0.1">
+  <loggers/>
+  <engine>Tez</engine>
+  <api__prefix>https://dmp.blibee.com/api/dmp/schedule/builds</api__prefix>
+  <jenkins__address>http://schedule.data.blibee.com/</jenkins__address>
+</com.ziroom.dp.buildstatus.properties.BuildStatusPropertiesPlugin>

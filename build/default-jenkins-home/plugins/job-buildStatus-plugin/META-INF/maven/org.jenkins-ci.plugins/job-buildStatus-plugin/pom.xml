@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>2.26</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>job-buildStatus-plugin</artifactId>
+    <version>0.1</version>
+    <packaging>hpi</packaging>
+
+    <properties>
+        <java.level>7</java.level>
+        <jenkins-test-harness.version>2.1</jenkins-test-harness.version>
+        <fast-json>1.2.9</fast-json>
+    </properties>
+
+    <name>job-buildStatus-plugin</name>
+    <description>job-buildStatus-plugin</description>
+    <inceptionYear>2016</inceptionYear>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/JobFanIn+Plugin</url>
+
+
+    <build>
+        <plugins>
+
+
+            <plugin>
+                <groupId>org.jenkins-ci.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <version>1.106</version>
+                <configuration>
+                    <loggers>
+                        <hudson.plugins.audit_trail>FINE</hudson.plugins.audit_trail>
+                    </loggers>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
+                                    <message>Build with Maven 2.2.1 or Maven 3.0.4 (or later). Maven 2.1.0 and 2.2.0
+                                        produce incorrect GPG signatures and checksums respectively.
+                                    </message>
+                                </requireMavenVersion>
+                                <requireMavenVersion>
+                                    <!-- DataCloud override parent setting -->
+                                    <!--<version>(,3.0),[3.0.4,)</version>-->
+                                    <version>[3.0,)</version>
+                                    <message>Build with Maven 3.0.4 or later. Maven 3.0 through 3.0.3 inclusive do not
+                                        pass correct settings.xml to Maven Release Plugin.
+                                    </message>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>display-info</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 这里可以跳过此plugin的执行,这个还是很有用的 -->
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <scm>
+        <connection>scm:git:git://github.com/jenkinsci/audit-trail-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/audit-trail-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/audit-trail-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cloudbees</groupId>
+            <artifactId>syslog-java-client</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>2.0.1</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jenkins-ci.main</groupId>
+            <artifactId>jenkins-war</artifactId>
+            <type>war</type>
+            <version>2.46.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jenkins-ci.main</groupId>
+            <artifactId>jenkins-core</artifactId>
+            <version>2.46.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fast-json}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ziroom.dp</groupId>
+            <artifactId>job-resource-plugin</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

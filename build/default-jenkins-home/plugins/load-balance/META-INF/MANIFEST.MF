@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: load-balance
+Specification-Title: Changes Jenkins to use a LoadBalancer that prefer
+ s least loaded nodes
+Implementation-Title: load-balance
+Implementation-Version: 1.1.0-SNAPSHOT
+Plugin-Class: com.jenkins.jplugin.leastload.LeastLoadPlugin
+Group-Id: org.jenkins-ci.plugins
+Short-Name: load-balance
+Long-Name: Load Balance Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Least+Load+Plugin
+Plugin-Version: 1.1.0-SNAPSHOT (private-cfa7db04-wanghf)
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Developers: Brendan Nolan:bstick12:brendan.nolan@gmail.com
+

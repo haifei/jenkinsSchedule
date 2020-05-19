@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: mindless
+Build-Jdk: 1.6.0_22
+Extension-Name: jquery-ui
+Implementation-Title: jquery-ui
+Implementation-Version: 1.0.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: jquery-ui
+Long-Name: Jenkins jQuery UI plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/jQuery+UI+Plugin
+Plugin-Version: 1.0.2
+Hudson-Version: 1.397
+Plugin-Dependencies: jquery:1.0.2
+Plugin-Developers: Kiyotaka Oku:kiy0taka:
+

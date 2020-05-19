@@ -1,0 +1,4 @@
+<j:jelly xmlns:j="jelly:core">
+  <j:set var="jobFailoverTimes" value="${it.getJobFailoverTimes(job)}"/>
+  <td data="${jobFailoverTimes}">${jobFailoverTimes}</td>
+</j:jelly>

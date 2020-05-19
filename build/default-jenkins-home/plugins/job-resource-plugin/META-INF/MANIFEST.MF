@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: job-resource-plugin
+Specification-Title: Resource View on Yarn Plugin
+Implementation-Title: job-resource-plugin
+Implementation-Version: 1.0
+Group-Id: com.ziroom.dp
+Short-Name: job-resource-plugin
+Long-Name: Resource View on Yarn Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/TODO+Plugin
+Plugin-Version: 1.0
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Dependencies: copyartifact:1.38.1;resolution:=optional,dashboar
+ d-view:2.9.4,jquery-ui:1.0.2,jquery:1.7.2-1,matrix-project:1.9,parame
+ terized-trigger:2.11;resolution:=optional,analysis-core:1.87
+Plugin-Developers: 
+

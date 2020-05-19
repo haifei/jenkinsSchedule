@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: Leo
+Build-Jdk: 1.8.0_74
+Extension-Name: build-name-setter
+Implementation-Title: build-name-setter
+Implementation-Version: 1.6.5
+Group-Id: org.jenkins-ci.plugins
+Short-Name: build-name-setter
+Long-Name: build-name-setter
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Build+Name+Setter+Plugin
+Plugin-Version: 1.6.5
+Hudson-Version: 1.480.3
+Jenkins-Version: 1.480.3
+Plugin-Dependencies: token-macro:1.5.1
+Plugin-Developers: Kohsuke Kawaguchi:kohsuke:kkawaguchi@cloudbees.com,
+ Lev Mishin:Le0:leomichine@gmail.com
+

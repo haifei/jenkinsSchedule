@@ -1,0 +1,61 @@
+*.py[cod]
+.python-version
+# kdiff3 ignore
+*.orig
+# maven ignore
+target/
+# eclipse ignore
+.settings/
+.project
+.classpath
+# idea ignore
+.idea/
+mine
+.DS_Store
+*.ipr
+*.iml
+*.iws
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+# system ignore
+*.DS_Store
+Thumbs.db
+jobs/jobs.iml
+# package ignore (optional)
+# *.jar
+# *.war
+# *.zip
+# *.tar
+# *.tar.gz
+
+*/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+application.properties
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+

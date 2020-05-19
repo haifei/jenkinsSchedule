@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: hafner
+Build-Jdk: 1.7.0_79
+Extension-Name: analysis-core
+Specification-Title: This plug-in provides utilities for the static co
+ de analysis plug-ins.
+Implementation-Title: analysis-core
+Implementation-Version: 1.91
+Plugin-Class: hudson.plugins.analysis.core.AnalysisCorePlugin
+Group-Id: org.jvnet.hudson.plugins
+Short-Name: analysis-core
+Long-Name: Static Analysis Utilities
+Url: http://wiki.jenkins-ci.org/x/CwDgAQ
+Plugin-Version: 1.91
+Hudson-Version: 1.625.1
+Jenkins-Version: 1.625.1
+Plugin-Dependencies: ant:1.1;resolution:=optional,dashboard-view:2.9.4
+ ;resolution:=optional,structs:1.2,git:3.1.0;resolution:=optional,toke
+ n-macro:2.1;resolution:=optional,maven-plugin:2.9,matrix-project:1.4
+Plugin-Developers: Ulli Hafner:drulli:ullrich.hafner@gmail.com
+

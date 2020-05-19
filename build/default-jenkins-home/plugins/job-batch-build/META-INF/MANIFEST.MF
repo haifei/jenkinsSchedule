@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: job-batch-build
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: job-batch-build
+Implementation-Version: 1.0
+Group-Id: org.jenkins-ci.plugins
+Short-Name: job-batch-build
+Long-Name: job-batch-build
+Plugin-Version: 1.0
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Dependencies: matrix-project:1.9
+Plugin-Developers: 
+

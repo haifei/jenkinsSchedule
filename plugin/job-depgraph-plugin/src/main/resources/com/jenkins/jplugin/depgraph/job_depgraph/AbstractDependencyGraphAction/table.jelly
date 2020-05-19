@@ -1,0 +1,118 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
+    <!--<l:layout title="Test" norefresh="true">-->
+    <l:layout title="${it.title}">
+        <!--<st:include page="sidepanel.jelly" it="${it.owner}"/>-->
+        <l:main-panel>
+
+            <h1>${%依赖状态表}</h1>
+
+            <l:tabBar>
+                <j:if test="${it.isGraphvizEnabled()}">
+                    <l:tab name="Graph View" active="${false}" href="."/>
+                </j:if>
+                <l:tab name="Table View" active="${true}" href="./table"/>
+            </l:tabBar>
+
+
+            <f:form name="job_depgraph" action="context" method="post">
+
+                <f:entry title="${%Context}:" field="context">
+                    <f:textbox value="${it.context}"
+                               checkUrl="'${app.rootUrl}/${it.owner.url}/job_depgraph/checkContext?context=' + encodeURIComponent(this.value)"
+                               onKeyUp="this.onchange();"/>
+                </f:entry>
+                <f:entry field="filter">
+                    <st:bind var="a" value="${it}"/>
+                    <f:checkbox title="上游" field="${it.upstream}" default="${it.upstream}" onclick="a.changeUpstream()"/>
+                    <f:checkbox title="下游" field="${it.downstream}" default="${it.downstream}" onclick="a.changeDownstream()"/>
+                    <f:submit value="${%筛选}"/>
+                </f:entry>
+            </f:form>
+
+            <table class="sortable pane bigtable">
+                <tr style="border-top: 0px;">
+                    <th align="center">
+                        ${%JobLastInstanceID}
+                    </th>
+                    <th align="center">
+                        ${%StreamFlag}
+                    </th>
+                    <th align="center">
+                        ${%JobName}
+                    </th>
+                    <th align="center">
+                        ${%JobRunStartTime}
+                    </th>
+                    <th align="center">
+                        ${%JobRunEndTime}
+                    </th>
+                    <th align="center">
+                        ${%JobStatus}
+                    </th>
+                    <th align="center">
+                        ${%JobContextTime}
+                    </th>
+                    <th align="center">
+                        ${%JobCreator}
+                    </th>
+                    <th align="center">
+                        ${%Operation}
+                    </th>
+                </tr>
+
+                <j:forEach var="d" items="${it.buildInfos}">
+                    <tr>
+                        <td align="center">
+                            <a href="${app.rootUrl}/${it.owner.url}/job/${d.jobName}/${d.jobLastInstanceID}"
+                               class='model-link inside'>#${d.jobLastInstanceID}
+                            </a>
+                        </td>
+                        <td align="center"><b>${d.streamFlag}</b></td>
+                        <td align="center">
+                            <a href="${app.rootUrl}/${it.owner.url}/job/${d.jobName}"
+                               class='model-link inside'>${d.jobName}
+                            </a>
+                        </td>
+                        <td align="center">${d.jobRunStartTime}</td>
+                        <td align="center">${d.jobRunEndTime}</td>
+                        <td align="center">${d.jobStatus}</td>
+                        <td align="center">${d.context}</td>
+                        <td align="center">${d.jobCreator}</td>
+                        <td align="center">
+                            <a onclick="a.setCxt('${d.context}')" href="${app.rootUrl}/${it.owner.url}/job/${d.jobName}/job_depgraph/table"
+                               class='model-link inside' >${%依赖}
+                            </a>
+                        </td>
+                    </tr>
+                </j:forEach>
+            </table>
+            <b>${it.total}</b>
+            <p>
+                ${%【上游】能够影响此任务构建结果的任务集合，【下游】被此任务状态所影响到的任务集合}
+            </p>
+            <p>
+                ${%【NOT_BUILT】未构建，【PEDDING】等待中，【BUILDING】构建中，【SUCCESS】构建成功，【FAILURE】构建失败}
+            </p>
+            <p>
+                ${%【Context】默认为空时，在【全局空间】下，列表显示所有任务最近一次的构建状态，在【任务空间】下，列表显示当前任务的上下游的最近一次构建状态}
+            </p>
+            <p>
+                ${%【Context】被指定时，在【全局空间】下，列表显示所有任务基于此Context的构建状态，在【任务空间】下，列表显示当前任务基于此Context的上下游的构建状态}
+            </p>
+            <p>
+                ${%【-1】Duration中的-1表示任务还在队列中，还没有开始执行}
+            </p>
+
+        </l:main-panel>
+        <j:choose>
+            <j:when test="${it.parentObject != null}">
+                <st:include it="${it.parentObject}" page="sidepanel.jelly" optional="true"/>
+            </j:when>
+            <j:otherwise>
+                <st:include page="sidepanel.jelly" optional="true"/>
+            </j:otherwise>
+        </j:choose>
+    </l:layout>
+</j:jelly>

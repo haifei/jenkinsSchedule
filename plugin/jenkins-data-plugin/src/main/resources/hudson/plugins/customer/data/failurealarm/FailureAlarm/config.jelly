@@ -1,0 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+    <f:entry title="短信" field="triggerSms">
+        <f:checkbox/>
+    </f:entry>
+    <f:entry title="钉钉" field="triggerDingDing">
+        <f:checkbox/>
+    </f:entry>
+</j:jelly>

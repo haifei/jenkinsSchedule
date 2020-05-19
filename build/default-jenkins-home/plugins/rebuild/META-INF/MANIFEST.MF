@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: rebuild
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: rebuild
+Implementation-Version: 1.26-SNAPSHOT
+Group-Id: com.sonyericsson.hudson.plugins.rebuild
+Short-Name: rebuild
+Long-Name: Rebuilder
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin
+Plugin-Version: 1.26-SNAPSHOT (private-cfa7db04-wanghf)
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Dependencies: job-dependency-plugin:1.1,matrix-project:1.4.1
+Plugin-Developers: 
+

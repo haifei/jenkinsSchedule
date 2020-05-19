@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>定时任务—模板</description>
+  <ownerName>admin</ownerName>
+  <contacts>admin</contacts>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.JobFailoverProperty>
+      <failoverTimes>3</failoverTimes>
+      <failoverDelayTime>60</failoverDelayTime>
+    </hudson.model.JobFailoverProperty>
+    <com.jenkins.jplugin.leastload.LeastLoadDisabledProperty plugin="load-balance@1.1.0-SNAPSHOT">
+      <leastLoadDisabled>false</leastLoadDisabled>
+    </com.jenkins.jplugin.leastload.LeastLoadDisabledProperty>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.26-SNAPSHOT">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <org.jenkinsci.plugins.dependencyqueue.BlockWhilePriorityQueuedProperty plugin="priority-queue-plugin@1.0">
+      <priority>3</priority>
+    </org.jenkinsci.plugins.dependencyqueue.BlockWhilePriorityQueuedProperty>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>90</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.seitenbau.jenkins.plugins.dynamicparameter.StringParameterDefinition plugin="dynamicparameter@0.2.0">
+          <name>time_hour</name>
+          <description>调度构建时间, 切勿删除！！！</description>
+          <__uuid>e379356c-6131-4c9a-8b78-a03ccd673f44</__uuid>
+          <__remote>false</__remote>
+          <__script>new Date().minus(1).format( &apos;yyyy/MM/dd/HH&apos; ) </__script>
+          <__localBaseDirectory serialization="custom">
+            <hudson.FilePath>
+              <default>
+                <remote>/Users/wanghf/Documents/workspace/jenkins-schedule/build/default-jenkins-home/dynamic_parameter/classpath</remote>
+              </default>
+              <boolean>true</boolean>
+            </hudson.FilePath>
+          </__localBaseDirectory>
+          <__remoteBaseDirectory>dynamic_parameter_classpath</__remoteBaseDirectory>
+          <__classPath></__classPath>
+          <readonlyInputField>false</readonlyInputField>
+        </com.seitenbau.jenkins.plugins.dynamicparameter.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec></spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export time_hour=${time_hour}
+##TODO</command>
+    </hudson.tasks.Shell>
+    <org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater plugin="build-name-setter@1.6.5">
+      <buildName>version.txt</buildName>
+      <macroTemplate>#${BUILD_NUMBER}   【${time_hour}】</macroTemplate>
+      <fromFile>false</fromFile>
+      <fromMacro>true</fromMacro>
+      <macroFirst>false</macroFirst>
+    </org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater>
+  </builders>
+  <publishers>
+    <hudson.plugins.customer.data.timeoutalarm.TimeoutAlarm plugin="jenkins-data@1.0">
+      <triggerEmail>false</triggerEmail>
+      <triggerSms>false</triggerSms>
+      <triggerDingDing>true</triggerDingDing>
+      <duration>0.0</duration>
+      <startTime>0</startTime>
+    </hudson.plugins.customer.data.timeoutalarm.TimeoutAlarm>
+    <hudson.plugins.customer.data.failurealarm.FailureAlarm plugin="jenkins-data@1.0">
+      <triggerEmail>false</triggerEmail>
+      <triggerSms>false</triggerSms>
+      <triggerDingDing>true</triggerDingDing>
+    </hudson.plugins.customer.data.failurealarm.FailureAlarm>
+    <hudson.plugins.customer.data.rebuild.RebuildNotifiy plugin="jenkins-data@1.0">
+      <triggerDownstream>true</triggerDownstream>
+    </hudson.plugins.customer.data.rebuild.RebuildNotifiy>
+  </publishers>
+  <buildWrappers/>
+</project>

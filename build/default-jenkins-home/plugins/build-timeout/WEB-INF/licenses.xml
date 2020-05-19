@@ -1,0 +1,10 @@
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='build-timeout' version='1.16'>
+  <l:dependency name='Jenkins build timeout plugin' groupId='org.jenkins-ci.plugins' artifactId='build-timeout' version='1.16' url='http://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin'>
+    <l:description>Aborts a build if it's taking too long</l:description>
+    <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT' />
+  </l:dependency>
+  <l:dependency name='FindBugs-Annotations' groupId='com.google.code.findbugs' artifactId='annotations' version='3.0.0' url='http://findbugs.sourceforge.net/'>
+    <l:description>Annotation supports the FindBugs tool</l:description>
+    <l:license name='GNU Lesser Public License' url='http://www.gnu.org/licenses/lgpl.html' />
+  </l:dependency>
+</l:dependencies>

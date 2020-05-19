@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+The MIT License
+
+Copyright 2014 Jesse Glick.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:block>
+        <d:taglib uri="local">
+            <f:entry title="${%Jobs}">
+
+                <table width="100%" bgcolor="#EEEEEE">
+                    <f:optionalBlock name="job-dependency.onlyBuildOnce.OnlyBuildOnce"
+                                     title="${%任务周期内只允许构建一次}"
+                                     checked="${instance.onlyBuildOnce.OnlyBuildOnce}">
+
+                        <f:entry title="${%手动可重复触发}">
+                            <f:checkbox name="job-dependency.onlyBuildOnce.triggerByUser"
+                                        checked="${instance.onlyBuildOnce.triggerByUser}"/>
+                        </f:entry>
+
+                        <f:entry field="dateType" title="${%触发周期}">
+                            <select name="job-dependency.onlyBuildOnce.dateType" align="left">
+                                <f:option value="HOUR" selected="${instance.onlyBuildOnce.dateType.type=='hour'}">HOUR
+                                </f:option>
+                                <f:option value="DAY" selected="${instance.onlyBuildOnce.dateType.type=='day'}">DAY
+                                </f:option>
+                                <f:option value="WEEK" selected="${instance.onlyBuildOnce.dateType.type=='week'}">WEEK
+                                </f:option>
+                                <f:option value="MONTH" selected="${instance.onlyBuildOnce.dateType.type=='month'}">
+                                    MONTH
+                                </f:option>
+                            </select>
+                        </f:entry>
+                    </f:optionalBlock>
+                </table>
+
+                <table width="100%" bgcolor="#EEEEEE">
+                    <f:entry field="upstreamJobParams" title="${%上游任务参数}">
+                        <f:textbox name="job-dependency.upstreamJob.upstreamJobParams"
+                                   value="${instance.jobParams.upstreamJobParams}"/>
+                    </f:entry>
+                </table>
+
+                <f:repeatable var="t" items="${instance.jobProperties}" add="Add another job" minimum="1">
+                    <table width="100%" bgcolor="#EEEEEE">
+                        <f:entry field="upstreamJobs" title="${%所依赖上游任务}">
+                            <f:textbox name="job-dependency.jobproperty.upstreamJobName" value="${t.upstreamJobName}"/>
+                        </f:entry>
+
+                        <f:entry field="triggerCondition" title="${%所依赖上游任务触发条件}">
+                            <f:textbox name="job-dependency.jobproperty.triggerCondition"
+                                       value="${t.triggerCondition}"/>
+                        </f:entry>
+
+                        <f:entry field="threshold" title="${%所依赖上游任务状态}">
+                            <select name="job-dependency.jobproperty.threshold">
+                                <f:option value="SUCCESS" selected="${t.threshold.displayName=='Success'}">SUCCESS
+                                </f:option>
+                                <f:option value="UNSTABLE" selected="${t.threshold.displayName=='Unstable'}">UNSTABLE
+                                </f:option>
+                                <f:option value="FAILED" selected="${t.threshold.displayName=='Failed'}">FAILED
+                                </f:option>
+                            </select>
+                        </f:entry>
+
+                        <f:entry>
+                            <div align="right">
+                                <input type="button" value="${%Delete job}" class="repeatable-delete show-if-not-only"
+                                       style="margin-left: 1em;"/>
+                            </div>
+                        </f:entry>
+                    </table>
+                </f:repeatable>
+            </f:entry>
+        </d:taglib>
+    </f:block>
+</j:jelly>

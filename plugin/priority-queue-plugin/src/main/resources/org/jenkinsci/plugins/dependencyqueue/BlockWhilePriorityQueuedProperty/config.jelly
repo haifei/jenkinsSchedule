@@ -1,0 +1,19 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+    xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:p="/lib/hudson/project"
+    xmlns:this="this">  
+
+    <f:optionalBlock name="taskPriority" title="任务优先级" checked="${instance!=null}" help="help.html">
+        <f:entry title="${%级别: }">
+            <select name="priority" align="left">
+            <f:option value="3" selected="${instance.priority == '3'}">3</f:option>
+            <f:option value="1" selected="${instance.priority == '1'}">1</f:option>
+            <f:option value="2" selected="${instance.priority == '2'}">2</f:option>
+            <f:option value="4" selected="${instance.priority == '4'}">4</f:option>
+            <f:option value="5" selected="${instance.priority == '5'}">5</f:option>
+        </select>
+    </f:entry>
+    </f:optionalBlock>
+
+
+</j:jelly>

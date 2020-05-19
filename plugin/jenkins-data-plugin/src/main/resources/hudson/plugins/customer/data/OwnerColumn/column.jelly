@@ -1,0 +1,6 @@
+<j:jelly xmlns:j="jelly:core">
+    <j:set var="ownerName" value="${it.getOwnerName(job)}"/>
+    <td>
+        <a href="${app.rootUrl}/user/${ownerName}">${ownerName}</a>
+    </td>
+</j:jelly>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.jenkins.jplugin.depgraph.job__depgraph.DependencyGraphProperty_-DescriptorImpl plugin="job-depgraph-plugin@1.0">
+  <graphvizEnabled>true</graphvizEnabled>
+  <editFunctionInTableViewEnabled>false</editFunctionInTableViewEnabled>
+</com.jenkins.jplugin.depgraph.job__depgraph.DependencyGraphProperty_-DescriptorImpl>

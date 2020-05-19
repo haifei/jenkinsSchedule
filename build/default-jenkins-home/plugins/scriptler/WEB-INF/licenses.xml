@@ -1,0 +1,5 @@
+<l:dependencies xmlns:l='licenses'>
+  <l:dependency name='Scriptler' groupId='org.jenkins-ci.plugins' artifactId='scriptler' version='2.2' url='http://wiki.jenkins-ci.org/display/JENKINS/Scriptler+Plugin'>
+    <l:description>Scriptler allows you to store/edit/execute groovy scripts on any of the slaves/nodes... no need to copy paste groovy code anymore. Beside administer  your scripts, Scritpler also provides a way to share scripts between users via hosted script catalogs on the internet.</l:description>
+  </l:dependency>
+</l:dependencies>

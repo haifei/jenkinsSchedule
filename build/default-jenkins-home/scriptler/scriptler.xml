@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scriptler plugin="scriptler@2.2">
+  <scriptSet class="sorted-set">
+    <comparator class="org.jvnet.hudson.plugins.scriptler.util.ByNameSorter"/>
+  </scriptSet>
+  <disbableRemoteCatalog>false</disbableRemoteCatalog>
+  <allowRunScriptPermission>false</allowRunScriptPermission>
+  <allowRunScriptEdit>false</allowRunScriptEdit>
+</scriptler>

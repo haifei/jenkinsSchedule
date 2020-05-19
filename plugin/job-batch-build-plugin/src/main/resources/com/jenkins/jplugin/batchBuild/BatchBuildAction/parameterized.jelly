@@ -1,0 +1,92 @@
+<!--
+The MIT License
+
+Copyright (c) 2004-2009, Sun Microsystems, Inc., Kohsuke Kawaguchi, Tom Huybrechts
+
+Copyright 2010 Sony Ericsson Mobile Communications.All rights reserved.
+Copyright 2012 Sony Mobile Communications AB. All rights reservered.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+    <l:layout title="${%BatchBuild}" norefresh="true" permission="${it.requiredPermission}">
+        <l:side-panel>
+            <l:tasks>
+                <l:task icon="images/24x24/up.gif" href="${rootURL}/" title="${%Back to Dashboard}"/>
+            </l:tasks>
+        </l:side-panel>
+        <l:main-panel>
+            <j:invokeStatic var="currentThread" className="java.lang.Thread" method="currentThread" />
+            <j:invoke var="buildClass" on="${currentThread.contextClassLoader}" method="loadClass">
+                <j:arg value="hudson.model.Run"/>
+            </j:invoke>
+
+            <j:invoke var="parmactionClass" on="${currentThread.contextClassLoader}" method="loadClass">
+                <j:arg value="hudson.model.ParametersAction" />
+            </j:invoke>
+            <j:invoke var="parametersDefinitionPropertyClass" on="${currentThread.contextClassLoader}" method="loadClass">
+                <j:arg value="hudson.model.ParametersDefinitionProperty" />
+            </j:invoke>
+            <j:invoke var="passwordParameterValueClass" on="${currentThread.contextClassLoader}" method="loadClass">
+                <j:arg value="hudson.model.PasswordParameterValue" />
+            </j:invoke>
+
+            <j:set var="instance" value="${it}"/>
+            <j:set var="build" value="${request.findAncestorObject(buildClass)}" />
+            <j:set var="paramAction" value="${build.getAction(parmactionClass)}" />
+            <j:set var="parametersProperty" value="${build.parent.getProperty(parametersDefinitionPropertyClass)}" />
+
+            <f:form method="post" action="configSubmit" name="config" tableClass="parameters">
+            	<!-- Displaying the form based on current job parameter config with previous build values. -->
+
+                <br/>
+                <br/>
+                <b>
+                    <font size="2" color="#FF0000">
+                        <br/>功能特性：批量单次构建, 根据【开始时间】—— 【结束时间】, 按照 t+1, 批量提交作业
+                        <br/>注意事项：1.此任务不会执行下游任务
+                        <br/><span style="text-indent: 5em; display: inline-block">2. 时间格式: yyyy/MM/dd/HH</span>
+                    </font>
+                </b>
+                    <tbody>
+                        <f:entry title="${%开始时间}" >
+                            <div name="start_time" >
+                                <input  name="start_time" value="" />
+                            </div>
+                        </f:entry>
+                        <br/>
+                        <br/>
+                       <f:entry title="${%结束时间}" >
+                            <div name="end_time" >
+                                <input name="end_time" value="" />
+                            </div>
+                        </f:entry>
+                    </tbody>
+                <br/>
+                <br/>
+                <f:block>
+                    <f:submit value="${%立即执行}"/>
+                </f:block>
+            </f:form>
+        </l:main-panel>
+    </l:layout>
+</j:jelly>

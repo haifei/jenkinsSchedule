@@ -1,0 +1,14 @@
+Started by timer
+Building in workspace /Users/wanghf/Documents/workspace/jenkinsSchedule/build/default-jenkins-home/workspace/test_ods_4
+[test_ods_4] $ /bin/sh -xe /var/folders/p9/sb5n3jfd09x_p9kp_6dpx5h00000gn/T/hudson4103315180160278293.sh
++ export time_hour=2020/05/17/13
++ time_hour=2020/05/17/13
++ echo '========= test_ods_5'
+========= test_ods_5
+Evaluated macro: '#1   【2020/05/17/13】'
+Setting build name to '#1   【2020/05/17/13】'
+[Timeout Alart Plugin] perform.
+[task failure plugin] perform...
+[task rebuild plugin] perform...
+该作业不是由用户启动的，不进行手动执行通知！
+Finished: SUCCESS

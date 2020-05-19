@@ -1,0 +1,6 @@
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='swarm' version='3.5-SNAPSHOT'>
+  <l:dependency name='Jenkins Self-Organizing Swarm Plug-in Modules' groupId='org.jenkins-ci.plugins' artifactId='swarm' version='3.5-SNAPSHOT' url='http://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin'>
+    <l:description>The Jenkins Plugins Parent POM Project</l:description>
+    <l:license name='MIT license' />
+  </l:dependency>
+</l:dependencies>

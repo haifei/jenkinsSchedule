@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+   
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>jenkins-plugin</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>job-dependency-plugin</module>
+        <module>jenkins-data-plugin</module>
+        <module>priority-queue-plugin</module>
+        <module>job-gleaning-plugin</module>
+        <module>load-balance-plugin</module>
+        <module>swarm-plugin</module>
+        <module>metrics-plugin</module>
+        <module>rebuild-plugin</module>
+        <module>dynamicparameter-plugin-0.2.0</module>
+        <module>job-depgraph-plugin</module>
+        <module>sqlplus-script-runner-plugin-sqlplus-script-runner-2.0.0</module>
+        <module>job-batch-build-plugin</module>
+        <module>role-strategy-plugin</module>
+        <module>thin-backup-plugin</module>
+    </modules>
+
+</project>

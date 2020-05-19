@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: nenashev
+Build-Jdk: 1.7.0_75
+Extension-Name: sidebar-link
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: sidebar-link
+Implementation-Version: 1.9.1
+Plugin-Class: hudson.plugins.sidebar_link.SidebarLinkPlugin
+Group-Id: org.jenkins-ci.plugins
+Short-Name: sidebar-link
+Long-Name: Sidebar Link
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Sidebar-Link+Plugin
+Plugin-Version: 1.9.1
+Hudson-Version: 1.625.3
+Jenkins-Version: 1.625.3
+Plugin-Dependencies: cloudbees-folder:4.0;resolution:=optional
+Plugin-Developers: Alan Harder:mindless:
+

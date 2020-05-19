@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>time_hour</name>
+          <description>调度构建时间, 切勿删除！！！</description>
+          <value>2020/05/16/22</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames class="hudson.model.ParametersDefinitionProperty$1">
+        <outer-class>
+          <parameterDefinitions>
+            <com.seitenbau.jenkins.plugins.dynamicparameter.StringParameterDefinition plugin="dynamicparameter@0.2.0">
+              <name>time_hour</name>
+              <description>调度构建时间, 切勿删除！！！</description>
+              <__uuid>ba9a9701-067e-4d84-a457-74e1c2a503b6</__uuid>
+              <__remote>false</__remote>
+              <__script>new Date().minus(1).format( &apos;yyyy/MM/dd/HH&apos; ) </__script>
+              <__localBaseDirectory serialization="custom">
+                <hudson.FilePath>
+                  <default>
+                    <remote>/Users/wanghf/Documents/workspace/jenkinsSchedule/build/default-jenkins-home/dynamic_parameter/classpath</remote>
+                  </default>
+                  <boolean>true</boolean>
+                </hudson.FilePath>
+              </__localBaseDirectory>
+              <__remoteBaseDirectory>dynamic_parameter_classpath</__remoteBaseDirectory>
+              <__classPath></__classPath>
+              <readonlyInputField>false</readonlyInputField>
+            </com.seitenbau.jenkins.plugins.dynamicparameter.StringParameterDefinition>
+          </parameterDefinitions>
+        </outer-class>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <jenkins.model.ParameterizedJobMixIn_-SingleBuildInvisibleAction/>
+    <com.jenkins.jplugin.batchBuild.BatchBuildAction plugin="job-batch-build@1.0"/>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.26-SNAPSHOT"/>
+  </actions>
+  <queueId>2</queueId>
+  <timestamp>1589726769279</timestamp>
+  <startTime>1589726769291</startTime>
+  <result>FAILURE</result>
+  <duration>10210</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/Users/wanghf/Documents/workspace/jenkinsSchedule/build/default-jenkins-home/workspace/test_ods_1</workspace>
+  <hudsonVersion>2.46.1</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

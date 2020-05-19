@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: wanghf
+Build-Jdk: 1.8.0_131
+Extension-Name: job-monitor
+Specification-Title: job monitor plugin
+Implementation-Title: job-monitor
+Implementation-Version: 1.1.0-SNAPSHOT
+Plugin-Class: com.ziroom.dp.monitor.JobMonitorPlugin
+Group-Id: org.jenkins-ci.plugins
+Short-Name: job-monitor
+Long-Name: Job Monitor Plugin
+Plugin-Version: 1.1.0-SNAPSHOT (private-1f3b7c6e-wanghf)
+Hudson-Version: 2.46.1
+Jenkins-Version: 2.46.1
+Plugin-Dependencies: ziroom-data:1.0
+Plugin-Developers: 
+Support-Dynamic-Loading: true
+

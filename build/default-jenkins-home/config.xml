@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>2.46.1</version>
+  <numExecutors>5</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="com.michelin.cio.hudson.plugins.rolestrategy.RoleBasedAuthorizationStrategy">
+    <roleMap type="projectRoles">
+      <role name="p_001" pattern=".*" busGroup="001">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Run.Delete</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangsan</sid>
+        </assignedSIDs>
+      </role>
+    </roleMap>
+    <roleMap type="globalRoles">
+      <role name="admin" pattern=".*" busGroup=".*">
+        <permissions>
+          <permission>hudson.model.View.Delete</permission>
+          <permission>hudson.model.Computer.Connect</permission>
+          <permission>hudson.model.Run.Delete</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains</permission>
+          <permission>hudson.model.Computer.Create</permission>
+          <permission>hudson.model.View.Configure</permission>
+          <permission>hudson.model.Computer.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Hudson.Administer</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View</permission>
+          <permission>hudson.model.Computer.Delete</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Hudson.Read</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete</permission>
+          <permission>hudson.model.View.Read</permission>
+          <permission>hudson.model.View.Create</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Computer.Configure</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create</permission>
+          <permission>hudson.model.Computer.Disconnect</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>admin</sid>
+        </assignedSIDs>
+      </role>
+      <role name="read-only" pattern=".*" busGroup=".*">
+        <permissions>
+          <permission>hudson.model.Hudson.Read</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.View.Read</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangsan</sid>
+        </assignedSIDs>
+      </role>
+      <role name="super-dev" pattern=".*" busGroup=".*">
+        <permissions>
+          <permission>hudson.model.Hudson.Read</permission>
+          <permission>hudson.model.View.Delete</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Run.Delete</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.View.Configure</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.View.Read</permission>
+          <permission>hudson.model.View.Create</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs/>
+      </role>
+    </roleMap>
+    <superBusGroup>006</superBusGroup>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>true</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULLNAME}</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <hudson.model.MyView>
+      <owner class="hudson" reference="../../.."/>
+      <name>temple</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.MyView>
+    <hudson.model.OwnerView>
+      <owner class="hudson" reference="../../.."/>
+      <name>我的视图</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.OwnerView>
+    <hudson.model.OwnerView>
+      <owner class="hudson" reference="../../.."/>
+      <name>myJobs</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <creator>caob</creator>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.OwnerView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>8283</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+</hudson>
