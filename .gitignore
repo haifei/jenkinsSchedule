@@ -59,4 +59,4 @@ application.properties
 /.nb-gradle/
 
 ### jenkinsSchedule ###
-/build/default-jenkins-home
+/build/default-jenkins-home/*
