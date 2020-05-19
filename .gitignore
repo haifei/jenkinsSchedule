@@ -57,6 +57,3 @@ application.properties
 /dist/
 /nbdist/
 /.nb-gradle/
-
-### self ###
-/build/default-jenkins-home
