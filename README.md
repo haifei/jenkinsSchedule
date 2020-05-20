@@ -74,12 +74,12 @@ sh jenkins-slave.sh start
 ![登录界面](https://github.com/haifei/jenkinsSchedule/blob/master/build/images/login.jpg)
 ![主界面](https://github.com/haifei/jenkinsSchedule/blob/master/build/images/main.jpg)
 ![作业界面](https://github.com/haifei/jenkinsSchedule/blob/master/build/images/job.jpg)
-        
+           
 # 文档
    
 # 关于
   * Jenkins ：[https://www.jenkins.io/](https://www.jenkins.io/) 
-  
+  * 如无法显示图片, 请在/etc/hosts中添加  199.232.28.133 raw.githubusercontent.com
 # 问题反馈
   * 报告issue: [https://github.com/haifei/jenkinsSchedule/issues](https://github.com/haifei/jenkinsSchedule/issues)
   
