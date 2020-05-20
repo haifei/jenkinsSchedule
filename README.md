@@ -71,8 +71,8 @@ sh jenkins-slave.sh start
 ```
 
 * 浏览器访问  [http://localhost:8080](http://localhost:8080), 默认管理员用户:  admin/adminQAZ
-![](https://github.com/haifei/jenkinsSchedule/build/images/login.jpg)
-![](https://github.com/haifei/jenkinsSchedule/build/images/main.jpg)
+![](https://github.com/haifei/jenkinsSchedule/blob/master/build/images/login.jpg)
+![](https://github.com/haifei/jenkinsSchedule/blob/master/build/images/main.jpg)
        
 # 文档
    
