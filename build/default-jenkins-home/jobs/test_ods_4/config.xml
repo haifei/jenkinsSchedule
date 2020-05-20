@@ -33,7 +33,7 @@
         <com.seitenbau.jenkins.plugins.dynamicparameter.StringParameterDefinition plugin="dynamicparameter@0.2.0">
           <name>time_hour</name>
           <description>调度构建时间, 切勿删除！！！</description>
-          <__uuid>78f82897-5364-4168-abb1-42eee0d39069</__uuid>
+          <__uuid>abe016bc-2269-4926-aba2-fe0f007bef77</__uuid>
           <__remote>false</__remote>
           <__script>new Date().minus(1).format( &apos;yyyy/MM/dd/HH&apos; ) </__script>
           <__localBaseDirectory serialization="custom">
@@ -57,9 +57,25 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <hudson.triggers.TimerTrigger>
-      <spec>55 13 * * *</spec>
-    </hudson.triggers.TimerTrigger>
+    <com.jenkins.jplugin.dependency.trigger.JobDependencyBuildTrigger plugin="job-dependency-plugin@1.1">
+      <spec></spec>
+      <upstreamProjects>test_ods_3</upstreamProjects>
+      <jobProperties>
+        <com.jenkins.jplugin.dependency.pojo.JobDependencyProperty>
+          <upstreamJobName>test_ods_3</upstreamJobName>
+          <triggerCondition>d=@$</triggerCondition>
+          <threshold>SUCCESS</threshold>
+        </com.jenkins.jplugin.dependency.pojo.JobDependencyProperty>
+      </jobProperties>
+      <onlyBuildOnce>
+        <OnlyBuildOnce>true</OnlyBuildOnce>
+        <triggerByUser>true</triggerByUser>
+        <dateType>DAY</dateType>
+      </onlyBuildOnce>
+      <jobParams>
+        <upstreamJobParams>time_hour</upstreamJobParams>
+      </jobParams>
+    </com.jenkins.jplugin.dependency.trigger.JobDependencyBuildTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
@@ -92,7 +108,5 @@ echo &apos;========= test_ods_5&apos;</command>
       <triggerDownstream>true</triggerDownstream>
     </hudson.plugins.customer.data.rebuild.RebuildNotifiy>
   </publishers>
-  <buildWrappers>
-    <com.jenkins.jplugin.dependency.trigger.JobDependencyBuildTrigger_-StringBuildWrapper plugin="job-dependency-plugin@1.1"/>
-  </buildWrappers>
+  <buildWrappers/>
 </project>
