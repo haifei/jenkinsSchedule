@@ -52,21 +52,21 @@ JenkinsSchedule 是基于jenkins 实现的分布式调度平台
 
 ## 执行编译
 ```
-git clone https://github.com/apache/flink.git
-cd flink
+git clone https://github.com/haifei/jenkinsSchedule.git
+cd jenkinsSchedule
 mvn clean package -DskipTests 
 ```
 
 # Getting Started
 ## 启动jenkins-master(主服务)
 ```
-cd flink/bin
+cd jenkinsSchedule/bin
 sh jenkins-master.sh start
 ```
 
 ## 启动jenkins-slave 
 ```
-cd flink/bin
+cd jenkinsSchedule/bin
 sh jenkins-slave.sh start
 ```
 
